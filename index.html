@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Submissive Profile — SC (Nethuli)</title>
+<style>
+  :root {
+    --bg: #0e0b10;
+    --bg-soft: #16121a;
+    --panel: #1c1620;
+    --panel-2: #221a28;
+    --line: #322836;
+    --ink: #ece6ef;
+    --ink-soft: #b8aec0;
+    --muted: #8a8090;
+    --accent: #b8869b;        /* dusty rose */
+    --accent-strong: #d99fb4;
+    --gold: #cda35b;
+    --star: #d99fb4;
+    --star-empty: #443a4a;
+    --radius: 14px;
+    --maxw: 920px;
+    --font-body: "Georgia", "Iowan Old Style", "Times New Roman", serif;
+    --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: radial-gradient(1200px 600px at 50% -10%, #1a1320 0%, var(--bg) 55%) no-repeat;
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent-strong); }
+
+  /* ---------- Nav (hidden until activated) ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(14, 11, 16, 0.82);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-ui);
+  }
+  body:not(.activated) nav { display: none; }
+  nav .nav-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    gap: 6px 18px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  nav .brand {
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: var(--accent-strong);
+    margin-right: auto;
+  }
+  nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    padding: 4px 2px;
+    border-bottom: 1px solid transparent;
+    transition: color .15s, border-color .15s;
+  }
+  nav a:hover { color: var(--accent-strong); border-color: var(--accent); }
+
+  /* ---------- Layout ---------- */
+  main {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 20px 96px;
+  }
+
+  header.hero {
+    text-align: center;
+    padding: 72px 12px 40px;
+  }
+  header.hero .salutation {
+    font-size: clamp(26px, 5vw, 40px);
+    line-height: 1.25;
+    margin: 0 0 14px;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  header.hero .salutation em {
+    color: var(--accent-strong);
+    font-style: italic;
+  }
+  header.hero .updated {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .rule {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    margin: 28px auto;
+    border: 0;
+  }
+
+  section { margin: 56px 0 0; scroll-margin-top: 70px; }
+
+  h2.section-title {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  h2.section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  h3 {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    color: var(--accent-strong);
+    margin: 0 0 6px;
+  }
+
+  .panel {
+    background: linear-gradient(180deg, var(--panel) 0%, var(--bg-soft) 100%);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+  }
+
+  .lede { color: var(--ink-soft); }
+
+  /* ---------- Profile stats ---------- */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .stat {
+    background: var(--panel);
+    padding: 16px 18px;
+  }
+  .stat .k {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .stat .v { font-size: 16px; color: var(--ink); }
+  .stat .v.redacted { color: var(--accent); font-style: italic; }
+
+  /* ---------- Prose blocks ---------- */
+  .prose-block { margin-bottom: 26px; }
+  .prose-block p { margin: 0; color: var(--ink-soft); }
+  .prose-block p + p { margin-top: 12px; }
+
+  .callout {
+    border-left: 3px solid var(--accent);
+    padding-left: 18px;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  /* ---------- Do's cards ---------- */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 14px;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    transition: border-color .15s, transform .15s;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card .card-title {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    color: var(--accent-strong);
+    margin-bottom: 6px;
+  }
+  .card p { margin: 0; font-size: 15px; color: var(--ink-soft); line-height: 1.55; }
+
+  /* ---------- Limits ---------- */
+  .limit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .limit-col h3 { display: flex; align-items: center; gap: 8px; }
+  .badge-dot {
+    width: 9px; height: 9px; border-radius: 50%; display: inline-block;
+  }
+  .dot-hard { background: #d9596b; }
+  .dot-soft { background: var(--gold); }
+  .dot-dream { background: var(--accent-strong); }
+  .dot-commit { background: #6fae8f; }
+
+  ul.clean { list-style: none; margin: 0; padding: 0; }
+  ul.clean li {
+    padding: 7px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+  ul.clean li:last-child { border-bottom: 0; }
+  ul.clean li .note {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .emph { color: var(--accent-strong); font-style: italic; }
+
+  /* ---------- Legend ---------- */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .legend .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .legend .swatch {
+    width: 11px; height: 11px; border-radius: 3px; display: inline-block;
+  }
+  .sw-do { background: var(--accent-strong); }
+  .sw-newbie { background: var(--gold); }
+  .sw-maybe { background: #6f7aa0; }
+  .sw-dont { background: #d9596b; }
+
+  /* ---------- Detailed table ---------- */
+  .table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--line); }
+  table.kinks {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+    min-width: 560px;
+  }
+  table.kinks thead th {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: left;
+    color: var(--muted);
+    background: var(--panel-2);
+    padding: 11px 16px;
+    position: sticky;
+    top: 0;
+  }
+  table.kinks tbody tr { border-top: 1px solid var(--line); }
+  table.kinks tbody tr:hover { background: rgba(184,134,155,0.06); }
+  table.kinks td { padding: 11px 16px; vertical-align: top; color: var(--ink-soft); }
+  table.kinks td.sub { color: var(--ink); }
+  table.kinks td.notes { font-family: var(--font-ui); font-size: 12.5px; color: var(--muted); }
+  table.kinks tr.group td {
+    background: var(--bg-soft);
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    padding: 10px 16px;
+  }
+  .stars { white-space: nowrap; letter-spacing: 1px; }
+  .stars .f { color: var(--star); }
+  .stars .e { color: var(--star-empty); }
+  .tag {
+    display: inline-block;
+    font-family: var(--font-ui);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+  }
+  .notes strong { color: var(--accent-strong); font-weight: 600; }
+
+  /* ---------- Signature ---------- */
+  .signature {
+    text-align: center;
+    margin-top: 64px;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+  .signature .name {
+    font-family: var(--font-ui);
+    font-style: normal;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: var(--accent-strong);
+    margin-top: 6px;
+  }
+
+  footer {
+    text-align: center;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-top: 48px;
+  }
+
+  /* ---------- Gate (activation UI) ---------- */
+  #gate {
+    max-width: 460px;
+    margin: 8px auto 0;
+    text-align: center;
+  }
+  body.activated #gate { display: none; }
+  #profile-content { display: none; }
+  body.activated #profile-content { display: block; }
+
+  .gate-card {
+    background: linear-gradient(180deg, var(--panel) 0%, var(--bg-soft) 100%);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 34px 30px;
+  }
+  .gate-card .lock-icon {
+    font-size: 30px;
+    margin-bottom: 14px;
+    filter: grayscale(0.2);
+  }
+  .gate-card h2 {
+    font-family: var(--font-ui);
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin: 0 0 10px;
+  }
+  .gate-card p {
+    font-family: var(--font-ui);
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin: 0 0 6px;
+    line-height: 1.6;
+  }
+  .gate-card .muted { color: var(--muted); font-size: 12.5px; }
+
+  /* progress bar */
+  .progress {
+    height: 5px;
+    width: 100%;
+    background: var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 22px 0 14px;
+  }
+  .progress > span {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+    border-radius: 999px;
+    transition: width .35s ease;
+  }
+  .steps {
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    color: var(--muted);
+    min-height: 18px;
+    letter-spacing: 0.02em;
+  }
+  .gate-state { display: none; }
+  .gate-state.show { display: block; }
+  .err-reason {
+    color: var(--accent-strong);
+    font-style: italic;
+    font-family: var(--font-body);
+  }
+  .contact {
+    margin-top: 14px;
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .spin {
+    display: inline-block;
+    width: 13px; height: 13px;
+    border: 2px solid var(--line);
+    border-top-color: var(--accent-strong);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    vertical-align: -2px;
+    margin-right: 6px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  @media (max-width: 540px) {
+    body { font-size: 16px; }
+    main { padding: 0 14px 72px; }
+    .panel { padding: 18px; }
+    .gate-card { padding: 26px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="brand">SC · Nethuli</span>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#dos">Do's</a>
+    <a href="#limits">Limits</a>
+    <a href="#detailed">Detailed List</a>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <h1 class="salutation">Dear <em>Mistress, Queen,<br />Goddess, Princess</em></h1>
+    <div class="updated">A private submissive application</div>
+  </header>
+
+  <hr class="rule" />
+
+  <!-- ===================== ACCESS GATE ===================== -->
+  <div id="gate">
+
+    <!-- State: activating (token present, handshake in progress) -->
+    <div class="gate-state" id="state-activating">
+      <div class="gate-card">
+        <div class="lock-icon">🔓</div>
+        <h2>Activating your access…</h2>
+        <p class="muted">Verifying your one-time invitation and binding it to this device.</p>
+        <div class="progress"><span id="bar"></span></div>
+        <div class="steps" id="steps"><span class="spin"></span>Starting…</div>
+      </div>
+    </div>
+
+    <!-- State: no token (someone landed here without an invite) -->
+    <div class="gate-state" id="state-locked">
+      <div class="gate-card">
+        <div class="lock-icon">🔒</div>
+        <h2>This profile is private</h2>
+        <p>The full profile is shared by personal invitation only.</p>
+        <p class="muted">If you would like to read it, please request access from me directly. I will send you a one-time link that activates on your device and expires after a short window.</p>
+        <div class="contact">Request access · <span class="err-reason">contact me privately</span></div>
+      </div>
+    </div>
+
+    <!-- State: error (invalid / expired / wrong device / revoked) -->
+    <div class="gate-state" id="state-error">
+      <div class="gate-card">
+        <div class="lock-icon">⛔</div>
+        <h2>This link can't be opened</h2>
+        <p class="err-reason" id="err-text">Invalid link.</p>
+        <p class="muted" id="err-help">Please ask me for a fresh invitation link.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===================== PROFILE (injected after activation) ===================== -->
+  <div id="profile-content"></div>
+
+</main>
+
+<script>
+  // ---- CONFIG --------------------------------------------------------------
+  // Paste your Apps Script Web App /exec URL here after deploying the backend.
+  const APPS_SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_EXEC_URL_HERE';
+  // -------------------------------------------------------------------------
+
+  const $ = (id) => document.getElementById(id);
+  const showState = (id) => {
+    document.querySelectorAll('.gate-state').forEach(el => el.classList.remove('show'));
+    if (id) $(id).classList.add('show');
+  };
+
+  // Read the one-time token from the URL hash (#k=...). The hash is never sent
+  // to any server, so the token stays out of request logs / referrers.
+  function readToken() {
+    const h = location.hash || '';
+    const m = h.match(/[#&]k=([^&]+)/);
+    return m ? decodeURIComponent(m[1]) : '';
+  }
+
+  const TOKEN_KEY = (t) => 'spk_secret_' + t;
+
+  // Lightweight device fingerprint (UA + language + screen + timezone + a tiny
+  // canvas hash). Not unbreakable — it's friction against sharing a copied secret.
+  async function fingerprint() {
+    const bits = [
+      navigator.userAgent,
+      navigator.language,
+      (navigator.languages || []).join(','),
+      screen.width + 'x' + screen.height + 'x' + (screen.colorDepth || ''),
+      new Date().getTimezoneOffset(),
+      navigator.hardwareConcurrency || '',
+      navigator.platform || '',
+    ];
+    try {
+      const c = document.createElement('canvas');
+      const ctx = c.getContext('2d');
+      ctx.textBaseline = 'top';
+      ctx.font = "14px 'Arial'";
+      ctx.fillStyle = '#f60';
+      ctx.fillRect(0, 0, 62, 20);
+      ctx.fillStyle = '#069';
+      ctx.fillText('sp-fp', 2, 2);
+      bits.push(c.toDataURL());
+    } catch (e) { /* canvas blocked — skip */ }
+    const data = new TextEncoder().encode(bits.join('|'));
+    const buf = await crypto.subtle.digest('SHA-256', data);
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  function setProgress(pct, label) {
+    $('bar').style.width = pct + '%';
+    $('steps').innerHTML = (pct < 100 ? '<span class="spin"></span>' : '') + label;
+  }
+
+  function failWith(reason) {
+    const map = {
+      'invalid':      ['Invalid link.', 'This invitation isn’t recognised. Please ask me for a fresh one.'],
+      'expired':      ['This invitation has expired.', 'Time-limited access has lapsed. Ask me to issue a new link.'],
+      'revoked':      ['Access was withdrawn.', 'This link has been revoked. Please contact me.'],
+      'other-device': ['Already opened on another device.', 'This one-time link is bound to the first device that used it.'],
+      'missing-token':['No invitation token.', 'Please use the full link I sent you.'],
+      'network':      ['Couldn’t reach the server.', 'Check your connection and reload the link.'],
+      'error':        ['Something went wrong.', 'Please try again, or ask me for a fresh link.'],
+    };
+    const [text, help] = map[reason] || map['error'];
+    $('err-text').textContent = text;
+    $('err-help').textContent = help;
+    showState('state-error');
+  }
+
+  function reveal(html) {
+    $('profile-content').innerHTML = html;
+    document.body.classList.add('activated');
+    window.scrollTo({ top: 0 });
+  }
+
+  async function activate(token) {
+    showState('state-activating');
+    setProgress(12, 'Reading your invitation…');
+
+    const fp = await fingerprint();
+    setProgress(38, 'Identifying this device…');
+
+    const deviceSecret = localStorage.getItem(TOKEN_KEY(token)) || '';
+
+    let res, json;
+    try {
+      setProgress(62, 'Verifying with the server…');
+      res = await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        // text/plain keeps this a "simple" request → no CORS preflight.
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ token, fingerprint: fp, deviceSecret }),
+        redirect: 'follow',
+      });
+      json = await res.json();
+    } catch (e) {
+      return failWith('network');
+    }
+
+    if (!json || !json.ok) return failWith((json && json.reason) || 'error');
+
+    if (json.deviceSecret) localStorage.setItem(TOKEN_KEY(token), json.deviceSecret);
+
+    setProgress(100, 'Access granted ✓');
+    setTimeout(() => reveal(json.content), 450);
+  }
+
+  (function init() {
+    const token = readToken();
+    if (!token) { showState('state-locked'); return; }
+    if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.indexOf('PASTE_') === 0) {
+      // Backend not wired up yet.
+      $('err-text').textContent = 'Access backend not configured yet.';
+      $('err-help').textContent = 'Set APPS_SCRIPT_URL in index.html.';
+      showState('state-error');
+      return;
+    }
+    activate(token);
+  })();
+</script>
+
+</body>
+</html>
