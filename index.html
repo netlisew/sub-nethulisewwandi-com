@@ -5,6 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex, nofollow" />
 <title>Submissive Profile — SC (Nethuli)</title>
+
+<!-- Google Analytics (GA4). Loaded only off-localhost so local editing never
+     pollutes the property. Tracking only — this private profile shows no public
+     visitor badge. Measurement ID is the site's web data stream. -->
+<script>
+(function () {
+  var h = location.hostname;
+  if (h === 'localhost' || h === '127.0.0.1' || h === '') return;   // skip dev
+  var ID = 'G-FLS5CHT4WD';                                          // sub-profile Measurement ID
+  var s = document.createElement('script');
+  s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', ID);
+})();
+</script>
 <style>
   :root {
     --bg: #0e0b10;
