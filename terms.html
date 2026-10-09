@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Standing Arrangement — Terms</title>
+
+<!-- Google Analytics (GA4). Same property as the profile; loaded only
+     off-localhost so local editing never pollutes it. -->
+<script>
+(function () {
+  var h = location.hostname;
+  if (h === 'localhost' || h === '127.0.0.1' || h === '') return;   // skip dev
+  var ID = 'G-FLS5CHT4WD';                                          // sub-profile Measurement ID
+  var s = document.createElement('script');
+  s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', ID);
+})();
+</script>
+
+<style>
+  :root {
+    --bg: #0e0b10;
+    --bg-soft: #16121a;
+    --panel: #1c1620;
+    --panel-2: #221a28;
+    --line: #322836;
+    --ink: #ece6ef;
+    --ink-soft: #b8aec0;
+    --muted: #8a8090;
+    --accent: #b8869b;        /* dusty rose */
+    --accent-strong: #d99fb4;
+    --gold: #cda35b;
+    --hard: #d9596b;
+    --commit: #6fae8f;
+    --radius: 14px;
+    --maxw: 920px;
+    --font-body: "Georgia", "Iowan Old Style", "Times New Roman", serif;
+    --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: radial-gradient(1200px 600px at 50% -10%, #1a1320 0%, var(--bg) 55%) no-repeat;
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-strong); }
+  p { margin: 0; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* ---------- Nav ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(14, 11, 16, 0.82);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-ui);
+  }
+  nav .nav-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    gap: 6px 18px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  nav .brand {
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: var(--accent-strong);
+    margin-right: auto;
+    text-decoration: none;
+  }
+  nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    padding: 4px 2px;
+    border-bottom: 1px solid transparent;
+    transition: color .15s, border-color .15s;
+  }
+  nav a:hover, nav a:focus-visible { color: var(--accent-strong); border-color: var(--accent); }
+
+  /* ---------- Layout ---------- */
+  main {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 20px 96px;
+  }
+  header.hero { text-align: center; padding: 72px 12px 36px; }
+  header.hero .salutation {
+    font-size: clamp(26px, 5vw, 40px);
+    line-height: 1.25;
+    margin: 0 0 14px;
+    color: var(--ink);
+    font-weight: 400;
+    text-wrap: balance;
+  }
+  header.hero .salutation em { color: var(--accent-strong); font-style: italic; }
+  header.hero .updated {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .prepared {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 10px;
+  }
+  .rule {
+    width: 60px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    margin: 28px auto; border: 0;
+  }
+
+  section { margin: 56px 0 0; scroll-margin-top: 70px; }
+  h2.section-title {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  h2.section-title .cl { color: var(--accent); flex: none; }
+  h2.section-title::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  .stack { display: flex; flex-direction: column; gap: 20px; }
+  .lede { color: var(--ink-soft); max-width: 62ch; }
+  .note {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 74ch;
+  }
+  strong { color: var(--ink); font-weight: 700; }
+  em { font-style: italic; }
+
+  h3.sub-head {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    margin: 10px 0 0;
+  }
+
+  .panel {
+    background: linear-gradient(180deg, var(--panel) 0%, var(--bg-soft) 100%);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+  }
+
+  /* ---------- Live inputs ---------- */
+  .assume { line-height: 2.3; color: var(--ink-soft); }
+  .assume input {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent-strong);
+    background: rgba(184, 134, 155, .12);
+    border: 0;
+    border-bottom: 1.5px solid var(--accent);
+    border-radius: 4px 4px 0 0;
+    padding: 3px 5px;
+    width: 5.4ch;
+    text-align: center;
+    -moz-appearance: textfield;
+  }
+  .assume input::-webkit-outer-spin-button,
+  .assume input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  .assume input:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 2px; }
+
+  /* ---------- Figures ---------- */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .stat { background: var(--panel); padding: 17px 18px; }
+  .stat .k {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 5px;
+  }
+  .stat .v {
+    font-size: clamp(27px, 5vw, 34px);
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+  .stat.lead .v { color: var(--accent-strong); }
+  .stat.win .v { color: var(--commit); }
+  .stat .d {
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+
+  /* ---------- Formula / waterfall ---------- */
+  .formula {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .frow {
+    display: grid;
+    grid-template-columns: 150px 1fr auto;
+    gap: 16px;
+    align-items: baseline;
+    padding: 15px 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  .frow:last-child { border-bottom: 0; }
+  .frow.sum { background: var(--panel-2); }
+  .frow .fk {
+    font-family: var(--font-ui);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .frow .fe {
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+  }
+  .frow .fe b { color: var(--accent-strong); font-weight: 700; }
+  .frow .ft { font-size: 15px; color: var(--ink-soft); }
+  .frow .fv {
+    font-family: var(--font-mono);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .frow.sum .fv { color: var(--accent-strong); }
+  @media (max-width: 600px) {
+    .frow { grid-template-columns: 1fr auto; gap: 4px 12px; padding: 14px 18px; }
+    .frow .fk { grid-column: 1 / -1; }
+  }
+
+  /* ---------- Tracks ---------- */
+  .tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .tracks { grid-template-columns: 1fr; } }
+  .track {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .track .eyebrow {
+    font-family: var(--font-ui);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .track .track-name { font-size: 22px; color: var(--accent-strong); line-height: 1.1; }
+  .beads { display: flex; align-items: center; }
+  .bead { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex: none; }
+  .link { height: 1.5px; background: var(--line); flex: 1 1 auto; min-width: 4px; }
+  .track dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 7px 14px;
+    margin: 0;
+    font-size: 14.5px;
+  }
+  .track dt {
+    font-family: var(--font-ui);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 5px;
+  }
+  .track dd { margin: 0; color: var(--ink-soft); }
+
+  /* ---------- Bars ---------- */
+  .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  @media (max-width: 640px) { .charts { grid-template-columns: 1fr; } }
+  .chart { display: flex; flex-direction: column; gap: 15px; }
+  .chart-title { font-size: 16px; color: var(--ink); line-height: 1.35; }
+  .chart-title span {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+  .bars { display: flex; flex-direction: column; gap: 13px; }
+  .bar-row { display: flex; flex-direction: column; gap: 6px; }
+  .bar-lab {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+  .bar-lab b {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .bar-track { height: 10px; background: var(--panel-2); border-radius: 3px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 0 4px 4px 0; min-width: 3px; transition: width .35s ease; }
+  .bar-fill.crit { background: var(--hard); }
+  .bar-fill.warn { background: var(--gold); }
+  .bar-fill.good { background: var(--commit); }
+  @media (prefers-reduced-motion: reduce) { .bar-fill { transition: none; } }
+  .axis {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    padding-top: 6px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- Tables ---------- */
+  .tbl-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--panel);
+    -webkit-overflow-scrolling: touch;
+  }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; min-width: 480px; }
+  th, td { text-align: left; padding: 12px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th {
+    font-family: var(--font-ui);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    background: var(--panel-2);
+    line-height: 1.45;
+  }
+  tbody tr:last-child td { border-bottom: 0; }
+  td { color: var(--ink-soft); }
+  td.money, th.money {
+    text-align: right;
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  td.window { font-family: var(--font-mono); font-size: 13px; white-space: nowrap; color: var(--ink); }
+  .cost { font-family: var(--font-mono); font-size: 13px; font-weight: 600; white-space: nowrap; }
+  .cost.good { color: var(--commit); }
+  .cost.warn { color: var(--gold); }
+  .cost.crit { color: var(--hard); }
+  tr.total td { background: var(--panel-2); color: var(--ink); font-weight: 700; }
+  tr.bond-row td { background: rgba(184, 134, 155, .10); }
+  tr.active td { background: rgba(184, 134, 155, .10); color: var(--ink); font-weight: 700; }
+  tr.active td:first-child::after {
+    content: "\00a0\00a0\2190\00a0this proposal";
+    font-family: var(--font-ui);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    font-weight: 600;
+  }
+
+  /* comparison grid */
+  table.grid { min-width: 640px; }
+  table.grid td, table.grid th {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: 13px;
+    text-align: right;
+    white-space: nowrap;
+    padding: 11px 14px;
+  }
+  table.grid thead th { white-space: normal; font-family: var(--font-ui); letter-spacing: 0.06em; }
+  table.grid td.rowlab, table.grid th.rowlab {
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    text-align: left;
+    color: var(--ink-soft);
+    white-space: normal;
+    min-width: 150px;
+    padding-left: 18px;
+  }
+  table.grid th.pick { color: var(--accent-strong); background: rgba(184, 134, 155, .14); }
+  table.grid td.pick { background: rgba(184, 134, 155, .10); color: var(--ink); font-weight: 700; }
+  table.grid tr.key td { background: var(--panel-2); color: var(--ink); font-weight: 700; font-size: 14px; }
+  table.grid tr.key td.pick { background: rgba(184, 134, 155, .16); color: var(--accent-strong); }
+  table.grid tr.key td.rowlab { color: var(--ink); }
+  table.grid td.txt { font-family: var(--font-ui); white-space: normal; font-size: 12.5px; color: var(--muted); }
+
+  /* ---------- Lists ---------- */
+  ul.clean { list-style: none; margin: 0; padding: 0; }
+  ul.clean li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 12px;
+  }
+  ul.clean li:last-child { border-bottom: 0; }
+  ul.clean li::before { content: "\2014"; color: var(--accent); }
+  ul.clean li b { color: var(--ink); font-weight: 700; }
+
+  .callout {
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 18px;
+    color: var(--ink-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .callout .eyebrow {
+    font-family: var(--font-ui);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+  }
+
+  .open-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  @media (max-width: 600px) { .open-grid { grid-template-columns: 1fr; } }
+  .open-grid > div { background: var(--panel); padding: 16px 18px; }
+  .open-grid .q { font-size: 15.5px; color: var(--ink); margin-bottom: 3px; }
+  .open-grid .a { font-family: var(--font-ui); font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+
+  /* ---------- Edit-mode utility (hidden for everyone else) ---------- */
+  .editbar { display: none; }
+  body.edit-mode .editbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+    padding: 12px 16px;
+    border: 1px dashed var(--line);
+    border-radius: 10px;
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .editbar button {
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    color: var(--accent-strong);
+    background: rgba(184, 134, 155, .12);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .editbar button:hover { background: rgba(184, 134, 155, .22); color: var(--ink); }
+  .editbar button:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 2px; }
+  .editbar input {
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    color: var(--ink);
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 6px 10px;
+    min-width: 160px;
+  }
+  .editbar .said { color: var(--commit); }
+
+  footer {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 28px 20px 64px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="index.html">SC · Nethuli</a>
+    <a href="index.html">Profile</a>
+    <a href="#numbers">Numbers</a>
+    <a href="#rate">Rate</a>
+    <a href="#compare">Compare</a>
+    <a href="#moves">Cancellations</a>
+    <a href="#ledger">Ledger</a>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <h1 class="salutation">Terms of a <em>Standing Arrangement</em></h1>
+    <div class="updated">Payment structure only · nothing else agreed here</div>
+    <div class="prepared" id="prepared" hidden></div>
+  </header>
+
+  <hr class="rule" />
+
+  <p class="lede" style="margin: 0 auto; text-align: center;">A six-session package at a committed rate, where all six booking deposits are paid up front as one bond and the balance is paid on the day. You hold <span data-calc="bond">$300</span> from day one and book the whole term in one conversation. I get a package rate, and a cancellation can never cost me more than one deposit.</p>
+
+  <section id="numbers">
+    <h2 class="section-title"><span class="cl">§1</span>The numbers this is built on</h2>
+    <div class="stack">
+      <div class="panel assume">
+        Your walk-up rate is <input id="in-rate" type="number" min="1" step="10" value="350" aria-label="Walk-up session rate">,
+        your usual booking deposit is <input id="in-dep" type="number" min="1" step="5" value="50" aria-label="Booking deposit">,
+        I am committing to <input id="in-n" type="number" min="2" max="24" step="1" value="6" aria-label="Number of sessions"> sessions,
+        and I am asking for <input id="in-disc" type="number" min="0" step="5" value="25" aria-label="Package discount per session"> off each one.
+
+        <div class="editbar">
+          <span>Editor only &mdash; not shown to anyone else.</span>
+          <input id="in-to" type="text" placeholder="Prepared for&hellip;" aria-label="Prepared for" />
+          <button type="button" id="copy-link">Copy link with these numbers</button>
+          <span class="said" id="copied" hidden>Copied</span>
+        </div>
+      </div>
+      <p class="note">Figures in SGD. Change any of the four and every number on this page recalculates &mdash; including the comparison in &sect;4 &mdash; so we can settle this on the page rather than in a long message thread. The discount is the one number I expect you to move.</p>
+
+      <div class="stats">
+        <div class="stat lead">
+          <div class="k">Bond, paid up front</div>
+          <div class="v num" data-calc="bond">$300</div>
+          <div class="d">All <span data-calc="n">6</span> deposits at your usual <span data-calc="dep">$50</span>, in one payment.</div>
+        </div>
+        <div class="stat">
+          <div class="k">On the day, each time</div>
+          <div class="v num" data-calc="balance">$275</div>
+          <div class="d">Package rate <span data-calc="crate">$325</span> less the deposit already held.</div>
+        </div>
+        <div class="stat">
+          <div class="k">Package total</div>
+          <div class="v num" data-calc="total">$1,950</div>
+          <div class="d">Against <span data-calc="walk">$2,100</span> at the walk-up rate.</div>
+        </div>
+        <div class="stat win">
+          <div class="k">Your net concession</div>
+          <div class="v num" data-calc="net">$50</div>
+          <div class="d">After the completion gratuity in &sect;2. Worked through below.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rate">
+    <h2 class="section-title"><span class="cl">§2</span>The package rate</h2>
+    <div class="stack">
+      <p class="lede">Committing to <span data-calc="n">6</span> sessions is worth something, so I am asking for a volume rate the way any block booking earns one: <strong><span data-calc="disc">$25</span> off each session</strong>, or <span data-calc="discpct">7%</span>. That takes each session from <span data-calc="rate">$350</span> to <strong><span data-calc="crate">$325</span></strong>.</p>
+
+      <div class="tbl-wrap">
+        <table id="tiers">
+          <thead>
+            <tr>
+              <th>Commitment</th>
+              <th class="money">Off each</th>
+              <th class="money">Rate each</th>
+              <th class="money">Total</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="note">The ladder is there to show the shape, not to push you up it. If <span data-calc="n">6</span> goes well, the next tier is a conversation worth having.</p>
+
+      <h3 class="sub-head">The deposit is not discounted</h3>
+      <p class="lede">The bond stays at your full <span data-calc="dep">$50</span> per session. The discount comes out of the balance paid on the day, never out of the money you hold. You still receive the same <span data-calc="bond">$300</span> up front you would have collected as deposits anyway &mdash; just sooner, and all at once.</p>
+
+      <h3 class="sub-head">What the discount actually costs you</h3>
+      <div class="formula">
+        <div class="frow">
+          <span class="fk">Walk-up value</span>
+          <span class="ft"><span data-calc="n">6</span> sessions at <span data-calc="rate">$350</span>, if I booked them one at a time</span>
+          <span class="fv" data-calc="walk">$2,100</span>
+        </div>
+        <div class="frow">
+          <span class="fk">Package discount</span>
+          <span class="ft"><span data-calc="disc">$25</span> off each, for committing to all <span data-calc="n">6</span></span>
+          <span class="fv" data-calc="save-neg">&minus;$150</span>
+        </div>
+        <div class="frow">
+          <span class="fk">Completion gratuity</span>
+          <span class="ft">Paid on the final session if all <span data-calc="n">6</span> run to schedule</span>
+          <span class="fv" data-calc="grat-pos">+$100</span>
+        </div>
+        <div class="frow sum">
+          <span class="fk">You receive</span>
+          <span class="ft">A net concession of <span data-calc="net">$50</span>, or <span data-calc="netpct">2.4%</span>, on a completed term</span>
+          <span class="fv" data-calc="best">$2,050</span>
+        </div>
+      </div>
+      <p class="note">Stated plainly so there is nothing buried: the discount is real and unconditional &mdash; you give up <span data-calc="save">$150</span> the moment you agree. The gratuity is a separate, voluntary payment from me at the end, and it is how I intend to give most of it back for a term that runs cleanly. If the term does not complete, you keep the deposits and I do not pay the gratuity.</p>
+    </div>
+  </section>
+
+  <section id="formula">
+    <h2 class="section-title"><span class="cl">§3</span>The formula</h2>
+    <div class="stack">
+      <div class="formula">
+        <div class="frow">
+          <span class="fk">Package rate</span>
+          <span class="fe"><b>Rc</b> = R &minus; x &nbsp;=&nbsp; <span data-calc="rate">$350</span> &minus; <span data-calc="disc">$25</span></span>
+          <span class="fv" data-calc="crate">$325</span>
+        </div>
+        <div class="frow">
+          <span class="fk">Bond</span>
+          <span class="fe"><b>B</b> = n &times; d &nbsp;=&nbsp; <span data-calc="n">6</span> &times; <span data-calc="dep">$50</span></span>
+          <span class="fv" data-calc="bond">$300</span>
+        </div>
+        <div class="frow">
+          <span class="fk">Paid on the day</span>
+          <span class="fe"><b>p</b> = Rc &minus; d &nbsp;=&nbsp; <span data-calc="crate">$325</span> &minus; <span data-calc="dep">$50</span></span>
+          <span class="fv" data-calc="balance">$275</span>
+        </div>
+        <div class="frow sum">
+          <span class="fk">Package total</span>
+          <span class="fe"><b>T</b> = B + (n &times; p) &nbsp;=&nbsp; n &times; Rc</span>
+          <span class="fv" data-calc="total">$1,950</span>
+        </div>
+      </div>
+      <p class="lede">The bond is not an extra payment on top. It is the same <span data-calc="n">6</span> deposits you would collect one at a time anyway &mdash; collected once, at the start, then drawn down by one deposit per session until it reaches zero.</p>
+    </div>
+  </section>
+
+  <section id="compare">
+    <h2 class="section-title"><span class="cl">§4</span>The same six sessions, four ways</h2>
+    <div class="stack">
+      <p class="lede">Every column below buys exactly <span data-calc="n">6</span> sessions. What changes is the rate, when the money moves, and how much of mine is sitting with you for something that has not happened yet.</p>
+      <div class="tbl-wrap">
+        <table class="grid" id="grid">
+          <thead>
+            <tr>
+              <th class="rowlab">&nbsp;</th>
+              <th>Ad hoc<br>no commitment</th>
+              <th>Committed<br>you hold<br>the next one</th>
+              <th>Committed<br>paid in full<br>up front</th>
+              <th class="pick">Committed<br>deposit bond</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="note">Read the bottom two rows honestly: booking ad hoc is the <em>cheapest risk</em> for me, and it is also the column that gives you nothing &mdash; no discount to give, no dates in the diary, no money in hand. The bond column is me accepting real exposure in exchange for the package rate. It just caps that exposure at the deposits rather than the fees.</p>
+    </div>
+  </section>
+
+  <section id="bond">
+    <h2 class="section-title"><span class="cl">§5</span>Why the bond, and not prepayment</h2>
+    <div class="stack">
+      <p class="lede">The common arrangement is to collect the next session's full fee at the current one. It secures continuity, and I understand why it exists &mdash; but it means one bout of flu costs me a whole session fee. The bond secures the same continuity with a much smaller hostage.</p>
+
+      <div class="charts">
+        <div class="chart">
+          <div class="chart-title">If we stop halfway<span>My money already handed over for sessions that will not now happen</span></div>
+          <div class="bars">
+            <div class="bar-row">
+              <div class="bar-lab"><span>You hold the next one</span><b data-calc="exit-roll">$325</b></div>
+              <div class="bar-track"><div class="bar-fill warn" data-bar="exit-roll"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-lab"><span>Paid in full up front</span><b data-calc="exit-full">$975</b></div>
+              <div class="bar-track"><div class="bar-fill crit" data-bar="exit-full"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-lab"><span>Deposit bond</span><b data-calc="exit-bond">$150</b></div>
+              <div class="bar-track"><div class="bar-fill good" data-bar="exit-bond"></div></div>
+            </div>
+          </div>
+          <div class="axis"><span>$0</span><span data-calc="axis-exit">$975</span></div>
+        </div>
+
+        <div class="chart">
+          <div class="chart-title">If I cancel one session late<span>What a single missed date costs me &mdash; illness, work, anything</span></div>
+          <div class="bars">
+            <div class="bar-row">
+              <div class="bar-lab"><span>You hold the next one</span><b data-calc="late-roll">$325</b></div>
+              <div class="bar-track"><div class="bar-fill crit" data-bar="late-roll"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-lab"><span>Paid in full up front</span><b data-calc="late-full">$325</b></div>
+              <div class="bar-track"><div class="bar-fill crit" data-bar="late-full"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-lab"><span>Deposit bond</span><b data-calc="late-bond">$50</b></div>
+              <div class="bar-track"><div class="bar-fill good" data-bar="late-bond"></div></div>
+            </div>
+          </div>
+          <div class="axis"><span>$0</span><span data-calc="axis-late">$325</span></div>
+        </div>
+      </div>
+      <p class="note">Both charts assume the same package rate, the same deposit and the same <span data-calc="n">6</span>-session commitment. The only variable is the payment structure.</p>
+    </div>
+  </section>
+
+  <section id="tempo">
+    <h2 class="section-title"><span class="cl">§6</span>Two tempos, same money</h2>
+    <div class="stack">
+      <div class="tracks">
+        <div class="track">
+          <span class="eyebrow">Track A</span>
+          <span class="track-name">Monthly</span>
+          <div class="beads" data-beads="6" aria-hidden="true"></div>
+          <dl>
+            <dt>Span</dt><dd><span data-calc="n">6</span> sessions across <span data-calc="n">6</span> months, one a month</dd>
+            <dt>Grace</dt><dd>60 days past the final month for anything rescheduled</dd>
+            <dt>Terms</dt><dd><span data-calc="bond">$300</span> bond, <span data-calc="crate">$325</span> each &mdash; identical</dd>
+          </dl>
+        </div>
+        <div class="track">
+          <span class="eyebrow">Track B</span>
+          <span class="track-name">Fortnightly</span>
+          <div class="beads" data-beads="6" aria-hidden="true"></div>
+          <dl>
+            <dt>Span</dt><dd><span data-calc="n">6</span> sessions across 3 months, one every 14 days</dd>
+            <dt>Grace</dt><dd>30 days past the final fortnight for anything rescheduled</dd>
+            <dt>Terms</dt><dd><span data-calc="bond">$300</span> bond, <span data-calc="crate">$325</span> each &mdash; identical</dd>
+          </dl>
+        </div>
+      </div>
+      <p class="note">Pick whichever suits your diary. The rate and the structure are the same either way.</p>
+    </div>
+  </section>
+
+  <section id="moves">
+    <h2 class="section-title"><span class="cl">§7</span>What happens when a date moves</h2>
+    <div class="stack">
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr><th>Notice</th><th>What happens</th><th>Costs me</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="window">72 h or more</td>
+              <td>The session moves to a new date within the grace window. Its deposit travels with it.</td>
+              <td><span class="cost good">nothing</span></td>
+            </tr>
+            <tr>
+              <td class="window">24 &ndash; 72 h</td>
+              <td>That session's deposit is yours, kept. The session can still be rebooked &mdash; at the full package rate, since its deposit is spent.</td>
+              <td><span class="cost warn" data-calc="dep">$50</span></td>
+            </tr>
+            <tr>
+              <td class="window">Under 24 h</td>
+              <td>Deposit kept, and the session counts as used. You held the slot; that is what the deposit is for.</td>
+              <td><span class="cost crit" data-calc="dep-slot">$50 + the slot</span></td>
+            </tr>
+            <tr>
+              <td class="window">Medical &times; 1</td>
+              <td>Once per term, with an MC or a clinic receipt, a late cancellation is treated as if it had 72 hours' notice. One pass, not an open door.</td>
+              <td><span class="cost good">nothing</span></td>
+            </tr>
+            <tr>
+              <td class="window">You cancel</td>
+              <td>The session moves, deposit intact, no cost either way. On a no-show without notice, the bond is topped back up by one deposit from the next session's balance.</td>
+              <td><span class="cost good">nothing</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">One rule underneath all five rows: <strong>a missed session can only ever cost me that session's deposit.</strong> Nothing reaches back into the other five.</p>
+    </div>
+  </section>
+
+  <section id="exit">
+    <h2 class="section-title"><span class="cl">§8</span>Ending it early</h2>
+    <div class="stack">
+      <ul class="clean">
+        <li><span><b>Either of us</b> can end the arrangement after any completed session. No explanation owed.</span></li>
+        <li><span><b>If you end it</b> &mdash; the unused deposits still sitting in the bond come back to me, and the sessions already taken stay at the package rate.</span></li>
+        <li><span><b>If I end it</b> &mdash; you keep one deposit as an exit fee, the rest of the bond comes back, and I pay the walk-up difference on the sessions I did take. Ending early means I did not earn the volume rate.</span></li>
+      </ul>
+      <div class="callout">
+        <span class="eyebrow">If you would rather not refund at all</span>
+        <p>Then make the bond non-refundable but <em>non-expiring</em>: whatever is left of it stays as credit against future sessions with you for 12 months. You keep the cash either way, and I keep a reason to come back rather than a grievance. I can live with this version.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="yours">
+    <h2 class="section-title"><span class="cl">§9</span>What you get out of it</h2>
+    <ul class="clean">
+      <li><span><b><span data-calc="bond">$300</span> in hand on day one</b>, before a single session has happened &mdash; earlier and more certain than collecting <span data-calc="n">6</span> deposits one at a time, and not reduced by the discount.</span></li>
+      <li><span><b><span data-calc="n">6</span> dates in your diary</b>, agreed in one conversation instead of <span data-calc="n">6</span> separate booking negotiations.</span></li>
+      <li><span><b>No deposit chasing</b> and no payment reminders for the whole term. The bond is already there.</span></li>
+      <li><span><b><span data-calc="total">$1,950</span> of committed revenue</b> against the honest alternative, which is not <span data-calc="walk">$2,100</span> &mdash; it is however many ad-hoc bookings actually recur.</span></li>
+      <li><span><b>A completion gratuity of <span data-calc="grat">$100</span></b> on the final session if all <span data-calc="n">6</span> run to schedule, taking the term to <span data-calc="best">$2,050</span> and the discount down to <span data-calc="net">$50</span>.</span></li>
+    </ul>
+  </section>
+
+  <section id="ledger">
+    <h2 class="section-title"><span class="cl">§10</span>The ledger</h2>
+    <div class="stack">
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Point</th>
+              <th class="money">I pay</th>
+              <th class="money">Bond held</th>
+              <th class="money">Sessions left</th>
+            </tr>
+          </thead>
+          <tbody id="ledger-body"></tbody>
+        </table>
+      </div>
+      <p class="note">The bond runs down by exactly one deposit per session and lands on zero. One line from you after each session &mdash; &ldquo;received, bond now $X, N left&rdquo; &mdash; and neither of us has to keep a spreadsheet.</p>
+    </div>
+  </section>
+
+  <section id="open">
+    <h2 class="section-title"><span class="cl">§11</span>Still open</h2>
+    <div class="stack">
+      <div class="open-grid">
+        <div><div class="q">Is <span data-calc="disc">$25</span> off the right number?</div><div class="a">It is the number I expect to negotiate. Change it in &sect;1 and the whole page follows.</div></div>
+        <div><div class="q">How long is the grace window?</div><div class="a">60 days on Track A, 30 on Track B is my suggestion. Yours to set.</div></div>
+        <div><div class="q">Is the bond refundable on exit?</div><div class="a">&sect;8 gives two versions. Either works for me.</div></div>
+        <div><div class="q">How is the bond paid?</div><div class="a">One transfer, one receipt, whichever method you prefer.</div></div>
+      </div>
+      <p class="lede">Everything above is a proposal, not a condition. If a number or a window is wrong for how you work, say which one and I will move it.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>Payment terms only · nothing else agreed here</span>
+  <span class="num" id="stamp">&mdash;</span>
+</footer>
+
+<script>
+(function () {
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  var inRate = $('#in-rate'), inDep = $('#in-dep'), inN = $('#in-n'), inDisc = $('#in-disc'), inTo = $('#in-to');
+
+  function money(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+  function r5(v) { return Math.round(v / 5) * 5; }
+
+  function read() {
+    var R = Math.max(1, Number(inRate.value) || 0);
+    var d = Math.max(1, Number(inDep.value) || 0);
+    var n = Math.min(24, Math.max(2, Math.round(Number(inN.value) || 0)));
+    var x = Math.max(0, Number(inDisc.value) || 0);
+    if (x > R - 1) { x = R - 1; }
+    var Rc = R - x;
+    if (d > Rc) { d = Rc; }
+    return { R: R, d: d, n: n, x: x, Rc: Rc };
+  }
+
+  function beads(n) {
+    $$('.beads').forEach(function (el) {
+      el.innerHTML = '';
+      for (var i = 0; i < n; i++) {
+        if (i) { var l = document.createElement('span'); l.className = 'link'; el.appendChild(l); }
+        var b = document.createElement('span'); b.className = 'bead'; el.appendChild(b);
+      }
+    });
+  }
+
+  function row(cells, cls) {
+    var tr = document.createElement('tr');
+    if (cls) { tr.className = cls; }
+    tr.innerHTML = cells.join('');
+    return tr;
+  }
+
+  function tiers(v) {
+    var tb = $('#tiers tbody');
+    tb.innerHTML = '';
+    var rows = [
+      [Math.max(2, Math.ceil(v.n / 2)), r5(v.x * 0.6), ''],
+      [v.n, v.x, 'active'],
+      [v.n * 2, r5(v.x * 1.4), '']
+    ];
+    rows.forEach(function (r) {
+      var each = v.R - r[1];
+      tb.appendChild(row([
+        '<td>' + r[0] + ' sessions</td>',
+        '<td class="money">' + (r[1] ? '−' + money(r[1]) : '—') + '</td>',
+        '<td class="money">' + money(each) + '</td>',
+        '<td class="money">' + money(each * r[0]) + '</td>'
+      ], r[2]));
+    });
+  }
+
+  function grid(v) {
+    var tb = $('#grid tbody');
+    tb.innerHTML = '';
+    var unused = v.n - Math.floor(v.n / 2);
+    var bond = v.n * v.d;
+    var pkg = v.n * v.Rc;
+
+    var rows = [
+      ['Rate per session', money(v.R), money(v.Rc), money(v.Rc), money(v.Rc), ''],
+      ['Paid before session one', money(v.d), money(v.Rc), money(pkg), money(bond), ''],
+      ['Paid on each day', money(v.R - v.d), money(v.Rc), '$0', money(v.Rc - v.d), ''],
+      ['Total across ' + v.n + ' sessions', money(v.n * v.R), money(pkg), money(pkg), money(pkg), 'key'],
+      ['My saving vs walk-up', '—', money(v.n * v.x), money(v.n * v.x), money(v.n * v.x), ''],
+      ['One late cancellation costs me', money(v.d), money(v.Rc), money(v.Rc), money(v.d), ''],
+      ['At risk if we stop halfway', money(v.d), money(v.Rc), money(unused * v.Rc), money(unused * v.d), 'key'],
+      ['Continuity for you', 'none', v.n + ' dates', v.n + ' dates', v.n + ' dates', 'txt']
+    ];
+
+    rows.forEach(function (r) {
+      var cls = r[5] === 'key' ? 'key' : '';
+      var tdcls = r[5] === 'txt' ? ' txt' : '';
+      tb.appendChild(row([
+        '<td class="rowlab">' + r[0] + '</td>',
+        '<td class="' + tdcls.trim() + '">' + r[1] + '</td>',
+        '<td class="' + tdcls.trim() + '">' + r[2] + '</td>',
+        '<td class="' + tdcls.trim() + '">' + r[3] + '</td>',
+        '<td class="pick' + tdcls + '">' + r[4] + '</td>'
+      ], cls));
+    });
+  }
+
+  function ledger(v) {
+    var tb = $('#ledger-body');
+    tb.innerHTML = '';
+    var bond = v.n * v.d;
+    var rows = [['<strong>Bond</strong>, on agreeing', bond, bond, v.n, 'bond-row']];
+    for (var i = 1; i <= v.n; i++) {
+      bond -= v.d;
+      rows.push(['Session ' + i + ' — balance on the day', v.Rc - v.d, bond, v.n - i, '']);
+    }
+    rows.push(['Completion gratuity', 2 * v.d, 0, 0, '']);
+    rows.push(['<strong>Total</strong>', v.n * v.Rc + 2 * v.d, null, null, 'total']);
+
+    rows.forEach(function (r) {
+      tb.appendChild(row([
+        '<td>' + r[0] + '</td>',
+        '<td class="money">' + money(r[1]) + '</td>',
+        '<td class="money">' + (r[2] === null ? '—' : money(r[2])) + '</td>',
+        '<td class="money">' + (r[3] === null ? '—' : r[3]) + '</td>'
+      ], r[4]));
+    });
+  }
+
+  function set(key, text) {
+    $$('[data-calc="' + key + '"]').forEach(function (el) { el.textContent = text; });
+  }
+
+  function bar(key, value, max) {
+    $$('[data-bar="' + key + '"]').forEach(function (el) {
+      el.style.width = Math.max(1.5, (value / max) * 100) + '%';
+    });
+  }
+
+  function hashFor(v) {
+    var h = 'r=' + v.R + '&d=' + v.d + '&n=' + v.n + '&x=' + v.x;
+    var to = (inTo.value || '').trim();
+    if (to) { h += '&to=' + encodeURIComponent(to); }
+    return '#' + h;
+  }
+
+  function prepared() {
+    var to = (inTo.value || '').trim();
+    var el = $('#prepared');
+    if (to) { el.textContent = 'Prepared for ' + to; el.hidden = false; }
+    else { el.textContent = ''; el.hidden = true; }
+  }
+
+  function render() {
+    var v = read();
+    var bond = v.n * v.d;
+    var total = v.n * v.Rc;
+    var walk = v.n * v.R;
+    var grat = 2 * v.d;
+    var best = total + grat;
+    var net = walk - best;
+    var unused = v.n - Math.floor(v.n / 2);
+
+    set('n', String(v.n));
+    set('rate', money(v.R));
+    set('dep', money(v.d));
+    set('disc', money(v.x));
+    set('discpct', (v.R ? Math.round((v.x / v.R) * 100) : 0) + '%');
+    set('crate', money(v.Rc));
+    set('dep-slot', money(v.d) + ' + the slot');
+    set('bond', money(bond));
+    set('balance', money(v.Rc - v.d));
+    set('total', money(total));
+    set('walk', money(walk));
+    set('save', money(v.n * v.x));
+    set('save-neg', '−' + money(v.n * v.x));
+    set('grat', money(grat));
+    set('grat-pos', '+' + money(grat));
+    set('best', money(best));
+    set('net', (net < 0 ? '+' : '') + money(Math.abs(net)));
+    set('netpct', (walk ? (Math.abs(net) / walk * 100).toFixed(1) : '0') + '%');
+
+    var exit = { roll: v.Rc, full: unused * v.Rc, bond: unused * v.d };
+    var exitMax = Math.max(exit.roll, exit.full, exit.bond, 1);
+    set('exit-roll', money(exit.roll));
+    set('exit-full', money(exit.full));
+    set('exit-bond', money(exit.bond));
+    set('axis-exit', money(exitMax));
+    bar('exit-roll', exit.roll, exitMax);
+    bar('exit-full', exit.full, exitMax);
+    bar('exit-bond', exit.bond, exitMax);
+
+    set('late-roll', money(v.Rc));
+    set('late-full', money(v.Rc));
+    set('late-bond', money(v.d));
+    set('axis-late', money(v.Rc));
+    bar('late-roll', v.Rc, v.Rc);
+    bar('late-full', v.Rc, v.Rc);
+    bar('late-bond', v.d, v.Rc);
+
+    beads(v.n);
+    tiers(v);
+    grid(v);
+    ledger(v);
+    prepared();
+
+    try { history.replaceState(null, '', location.pathname + location.search + hashFor(v)); } catch (e) {}
+  }
+
+  // ---- read state from the hash --------------------------------------------
+  var editMode = false;
+  try {
+    var h = (location.hash || '').replace(/^#/, '');
+    h.split('&').forEach(function (p) {
+      var i = p.indexOf('='), k = i < 0 ? p : p.slice(0, i), raw = i < 0 ? '' : p.slice(i + 1);
+      if (k === 'edit') { editMode = true; return; }
+      if (k === 'to') { inTo.value = decodeURIComponent(raw.replace(/\+/g, ' ')); return; }
+      var val = Number(raw);
+      if (!isFinite(val)) { return; }
+      if (k === 'r') { inRate.value = val; }
+      if (k === 'd') { inDep.value = val; }
+      if (k === 'n') { inN.value = val; }
+      if (k === 'x') { inDisc.value = val; }
+    });
+  } catch (e) {}
+
+  var host = location.hostname;
+  if (editMode || host === 'localhost' || host === '127.0.0.1' || host === '') {
+    document.body.classList.add('edit-mode');
+  }
+
+  [inRate, inDep, inN, inDisc, inTo].forEach(function (el) {
+    el.addEventListener('input', render);
+    el.addEventListener('change', render);
+  });
+
+  $('#copy-link').addEventListener('click', function () {
+    var url = location.origin + location.pathname + hashFor(read());
+    var done = function () {
+      var tag = $('#copied');
+      tag.hidden = false;
+      setTimeout(function () { tag.hidden = true; }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(done, function () { window.prompt('Copy this link:', url); });
+    } else {
+      window.prompt('Copy this link:', url);
+    }
+  });
+
+  try {
+    $('#stamp').textContent = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  } catch (e) {}
+
+  render();
+})();
+</script>
+
+</body>
+</html>
