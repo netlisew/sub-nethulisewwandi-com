@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Session Consent &amp; Release</title>
+
+<!-- Google Analytics (GA4). Same property as the profile; loaded only
+     off-localhost so local editing never pollutes it. -->
+<script>
+(function () {
+  var h = location.hostname;
+  if (h === 'localhost' || h === '127.0.0.1' || h === '') return;   // skip dev
+  var ID = 'G-FLS5CHT4WD';                                          // sub-profile Measurement ID
+  var s = document.createElement('script');
+  s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', ID);
+})();
+</script>
+
+<style>
+  :root {
+    --bg: #0e0b10;
+    --bg-soft: #16121a;
+    --panel: #1c1620;
+    --line: #322836;
+    --ink: #ece6ef;
+    --ink-soft: #b8aec0;
+    --muted: #8a8090;
+    --accent: #b8869b;        /* dusty rose */
+    --accent-strong: #d99fb4;
+    --gold: #cda35b;
+    --hard: #d9596b;
+    --commit: #6fae8f;
+    --radius: 14px;
+    --maxw: 820px;
+    --font-body: "Georgia", "Iowan Old Style", "Times New Roman", serif;
+    --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: radial-gradient(1200px 600px at 50% -10%, #1a1320 0%, var(--bg) 55%) no-repeat;
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-strong); }
+  p { margin: 0; }
+  strong { color: var(--ink); }
+
+  /* ---------- Nav ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(14, 11, 16, 0.82);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-ui);
+  }
+  nav .nav-inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 12px 20px;
+    display: flex; gap: 6px 18px; flex-wrap: wrap; align-items: center;
+  }
+  nav .brand {
+    font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    font-size: 13px; color: var(--accent-strong); margin-right: auto; text-decoration: none;
+  }
+  nav a {
+    color: var(--ink-soft); text-decoration: none; font-size: 13px; letter-spacing: 0.03em;
+    padding: 4px 2px; border-bottom: 1px solid transparent; transition: color .15s, border-color .15s;
+  }
+  nav a:hover, nav a:focus-visible { color: var(--accent-strong); border-color: var(--accent); }
+
+  /* ---------- Layout ---------- */
+  main { max-width: var(--maxw); margin: 0 auto; padding: 0 20px 96px; }
+  header.hero { text-align: center; padding: 64px 12px 28px; }
+  header.hero h1 {
+    font-size: clamp(26px, 5vw, 38px); line-height: 1.25; margin: 0 0 12px;
+    font-weight: 400; text-wrap: balance;
+  }
+  header.hero h1 em { color: var(--accent-strong); }
+  .kicker {
+    font-family: var(--font-ui); font-size: 12px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .rule {
+    width: 60px; height: 1px; border: 0; margin: 26px auto;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+
+  section { margin: 48px 0 0; scroll-margin-top: 70px; }
+  h2.section-title {
+    font-family: var(--font-ui); font-size: 13px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); margin: 0 0 18px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  h2.section-title .cl { color: var(--accent); flex: none; }
+  h2.section-title::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  .stack { display: flex; flex-direction: column; gap: 14px; }
+  .lede { color: var(--ink-soft); }
+  .note { font-family: var(--font-ui); font-size: 13px; line-height: 1.6; color: var(--muted); }
+
+  ol.clauses { margin: 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: 10px; }
+  ol.clauses li::marker { color: var(--accent); font-family: var(--font-ui); font-size: 14px; }
+
+  .panel {
+    background: linear-gradient(180deg, var(--panel) 0%, var(--bg-soft) 100%);
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px;
+  }
+  .panel.hard { border-color: rgba(217, 89, 107, .5); }
+  .panel.hard h3 { color: var(--hard); }
+  .panel h3 {
+    font-family: var(--font-ui); font-size: 12px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent-strong); margin: 0 0 10px;
+  }
+
+  /* ---------- Fill-in fields ---------- */
+  .fill {
+    font: inherit; color: var(--accent-strong);
+    background: rgba(184, 134, 155, .10);
+    border: 0; border-bottom: 1.5px solid var(--accent); border-radius: 4px 4px 0 0;
+    padding: 1px 6px; min-width: 12ch;
+  }
+  .fill:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 2px; }
+  textarea.fill { width: 100%; min-height: 4.5em; resize: vertical; display: block; margin-top: 6px; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; }
+  @media (max-width: 640px) { .grid2 { grid-template-columns: 1fr; } }
+  .field label {
+    display: block; font-family: var(--font-ui); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .field .fill { width: 100%; }
+
+  /* ---------- Initials checklist ---------- */
+  .ack { display: grid; grid-template-columns: auto 1fr; gap: 10px 14px; align-items: center; }
+  .ack input[type=checkbox] { width: 20px; height: 20px; accent-color: var(--accent); }
+
+  /* ---------- Signatures ---------- */
+  .sigs { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 640px) { .sigs { grid-template-columns: 1fr; } }
+  .sig-line { border-bottom: 1px solid var(--ink-soft); height: 56px; margin: 6px 0 4px; }
+
+  .btn {
+    font-family: var(--font-ui); font-size: 13px; letter-spacing: .04em;
+    color: var(--ink); background: var(--panel); border: 1px solid var(--accent);
+    border-radius: 999px; padding: 8px 18px; cursor: pointer;
+    transition: background .15s, box-shadow .15s;
+  }
+  .btn:hover { background: #2a2030; box-shadow: 0 0 0 3px rgba(184, 134, 155, .18); }
+
+  /* ---------- Print: plain black on white, no chrome ---------- */
+  @media print {
+    :root { --ink: #000; --ink-soft: #222; --muted: #444; --accent: #555; --accent-strong: #000; --gold: #000; --line: #999; --hard: #000; }
+    body { background: #fff; color: #000; font-size: 12pt; }
+    nav, .no-print { display: none !important; }
+    .panel { background: none; border-color: #999; break-inside: avoid; }
+    .fill { background: none; color: #000; border-bottom-color: #000; }
+    section { margin-top: 24px; }
+    header.hero { padding-top: 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="index.html">SC · Nethuli</a>
+    <a href="index.html">Profile</a>
+    <a href="terms.html">Terms</a>
+    <a href="#nosafeword">No safe words</a>
+    <a href="#limits">Limits</a>
+    <a href="#release">Release</a>
+    <a href="#sign">Sign</a>
+  </div>
+</nav>
+
+<main>
+  <header class="hero">
+    <div class="kicker">Private · between two consenting adults</div>
+    <h1>Session Consent, Power Exchange <em>&amp;</em> Release</h1>
+    <div class="kicker">Draft prepared <span id="stamp"></span></div>
+    <hr class="rule" />
+    <p class="lede">I am writing this myself, freely, to tell the person named below that I trust them.
+      For the agreed session I hand them full control. This page records what I am agreeing to,
+      where it stops, and what each of us owes the other.</p>
+  </header>
+
+  <!-- 1 -->
+  <section id="parties">
+    <h2 class="section-title"><span class="cl">01</span> Parties &amp; session</h2>
+    <div class="panel grid2">
+      <div class="field"><label>Submissive (me)</label><input class="fill" placeholder="Full name" /></div>
+      <div class="field"><label>Dominant</label><input class="fill" placeholder="Full name" /></div>
+      <div class="field"><label>Session starts</label><input class="fill" type="datetime-local" /></div>
+      <div class="field"><label>Session ends (latest)</label><input class="fill" type="datetime-local" /></div>
+      <div class="field"><label>Location</label><input class="fill" placeholder="Address / venue" /></div>
+      <div class="field"><label>Person who knows where I am</label><input class="fill" placeholder="Name · phone · check-in time" /></div>
+    </div>
+    <p class="note" style="margin-top:10px">This agreement covers <strong>this session only</strong>. A new session needs a new
+      signature, even with the same person.</p>
+  </section>
+
+  <!-- 2 -->
+  <section id="grant">
+    <h2 class="section-title"><span class="cl">02</span> What I am giving</h2>
+    <ol class="clauses">
+      <li>I am over 18, of sound mind, and I am signing this without pressure, payment for the signature, or any threat.</li>
+      <li>For the session window above, I give the Dominant <strong>full control</strong> over what happens to me,
+        including restraint, sensation, pain, humiliation, and how long things last, <strong>inside the limits in section 04</strong>.</li>
+      <li>I have read and negotiated the Dominant's intentions beforehand. Advanced play we have agreed on is listed here:
+        <textarea class="fill" placeholder="e.g. heavy impact, extended bondage, consensual non-consent roleplay, …"></textarea></li>
+      <li>Anything <strong>not</strong> on that list and not obviously within its spirit needs my agreement first, before the session or during a check-in.</li>
+    </ol>
+  </section>
+
+  <!-- 3 -->
+  <section id="nosafeword">
+    <h2 class="section-title"><span class="cl">03</span> No safe words, and the one exception</h2>
+    <div class="stack">
+      <p>During the session there are <strong>no safe words for play</strong>. "No", "stop", "please", crying, begging and
+        struggling are part of the scene and do not end it. The Dominant may carry on through them.</p>
+      <div class="panel hard">
+        <h3>Emergency signal: never part of play</h3>
+        <p>One signal is kept back for <strong>real emergencies only</strong>: a medical problem, a panic attack,
+          numbness or loss of feeling, trouble breathing, chest pain, or anything that feels truly wrong rather than hard.</p>
+        <p style="margin-top:10px">Signal: <input class="fill" placeholder='e.g. "Red light" / drop the ball / 3 hard taps' style="min-width:28ch" /></p>
+        <p style="margin-top:10px">Gagged or restrained: <input class="fill" placeholder="e.g. drop the held object / hum 3 times" style="min-width:28ch" /></p>
+        <p class="note" style="margin-top:10px">When the signal is given, all play stops at once, restraints come off, and we check what is wrong.
+          I promise never to use it to get out of something that is only intense. The Dominant promises never to ignore it.</p>
+      </div>
+      <p>The Dominant may also stop or pause at any time, for any reason, and should check in when they think I may
+        be past what I can handle.</p>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section id="limits">
+    <h2 class="section-title"><span class="cl">04</span> Limits that still hold</h2>
+    <div class="stack">
+      <p>Giving full control does not cancel my hard limits. These are off the table no matter what I say in the moment:</p>
+      <div class="panel hard">
+        <h3>Hard limits</h3>
+        <ol class="clauses">
+          <li>Anything that is likely to cause serious or lasting injury: broken bones, permanent scarring or marks I have not agreed to, damage to organs, nerves or joints.</li>
+          <li>Anyone else present, watching, or joining without my agreement before the session.</li>
+          <li>Photos, video or audio without my agreement before the session.</li>
+          <li>Drugs or alcohol beyond what we agreed before the session, and any play while the Dominant is impaired.</li>
+          <li>Being left alone while restrained.</li>
+          <li>Unprotected sex, unless we have agreed otherwise and shared recent test results.</li>
+          <li>Also, from my profile: <textarea class="fill" placeholder="Copy your hard limits from the profile here"></textarea></li>
+        </ol>
+      </div>
+      <div class="panel">
+        <h3>Soft limits (Dominant may push, carefully)</h3>
+        <textarea class="fill" placeholder="Things I'm nervous about but open to being pushed on"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section id="health">
+    <h2 class="section-title"><span class="cl">05</span> Health</h2>
+    <div class="panel stack">
+      <p>So that the Dominant can keep me safe, I disclose:</p>
+      <div class="grid2">
+        <div class="field"><label>Medical conditions</label><input class="fill" placeholder="Asthma, heart, epilepsy, joints, none…" /></div>
+        <div class="field"><label>Medication</label><input class="fill" placeholder="Incl. blood thinners, inhalers" /></div>
+        <div class="field"><label>Allergies</label><input class="fill" placeholder="Latex, lube, adhesives…" /></div>
+        <div class="field"><label>Old injuries / sensitive areas</label><input class="fill" /></div>
+        <div class="field"><label>Emergency contact</label><input class="fill" placeholder="Name · phone" /></div>
+        <div class="field"><label>Last STI test (both)</label><input class="fill" placeholder="Date / result shared Y/N" /></div>
+      </div>
+      <p class="note">I will tell the Dominant before we start if anything here changes, or if I am tired, unwell or not in the right frame of mind.</p>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section id="duties">
+    <h2 class="section-title"><span class="cl">06</span> What the Dominant takes on</h2>
+    <p class="lede" style="margin-bottom:12px">Control comes with responsibility. By signing, the Dominant agrees to:</p>
+    <ol class="clauses">
+      <li>Stay sober enough to judge risk, and watch my breathing, colour, circulation and responses the whole time.</li>
+      <li>Keep safety shears, a first-aid kit and a charged phone within reach when I am restrained.</li>
+      <li>Stop at once and call for help (Singapore: <strong>995</strong>) if I may be seriously hurt, even if that means the session ends or others find out.</li>
+      <li>Keep to the agreed list and limits, and not use the "no safe words" rule as cover for anything outside them.</li>
+      <li>Give aftercare when we finish: <input class="fill" placeholder="water, blanket, cuddles, talk, check-in next day…" style="min-width:30ch" /></li>
+      <li>Keep what happens, and this document, private.</li>
+    </ol>
+  </section>
+
+  <!-- 7 -->
+  <section id="release">
+    <h2 class="section-title"><span class="cl">07</span> Risk, release &amp; indemnity</h2>
+    <ol class="clauses">
+      <li><strong>I understand the risks.</strong> BDSM can cause pain, bruising, welts, soreness, small cuts, nerve pressure,
+        emotional reactions and "drop" afterwards. I accept these as part of what I asked for.</li>
+      <li><strong>Release.</strong> To the fullest extent the law allows, I release the Dominant from claims for
+        <em>ordinary, expected</em> effects of the play agreed in this document, carried out within its limits.</li>
+      <li><strong>Indemnity.</strong> To the same extent, I will not hold the Dominant responsible for harm that comes from
+        information I hid or got wrong in section 05.</li>
+      <li><strong>What this does not cover.</strong> This release does not apply to injury caused on purpose beyond what we agreed,
+        to anything outside the limits in section 04, to ignoring the emergency signal, to recklessness or impairment, or to anything
+        done after consent ended.</li>
+      <li><strong>Nothing here stops me</strong> from getting medical care, speaking to the police, or speaking to anyone I choose
+        about what happened.</li>
+    </ol>
+  </section>
+
+  <!-- 8 -->
+  <section id="ending">
+    <h2 class="section-title"><span class="cl">08</span> How consent ends</h2>
+    <ol class="clauses">
+      <li>Before the session starts, I can withdraw from all of it, for any reason, without explanation or penalty.</li>
+      <li>Consent ends automatically at the end time in section 01, when the emergency signal is given, or when the Dominant ends the scene.</li>
+      <li>We will talk within <input class="fill" value="48 hours" style="min-width:9ch" /> after the session about what worked and what did not.</li>
+    </ol>
+  </section>
+
+  <!-- 9 -->
+  <section id="sign">
+    <h2 class="section-title"><span class="cl">09</span> Initials &amp; signatures</h2>
+    <div class="panel stack">
+      <div class="ack">
+        <input type="checkbox" id="a1" /><label for="a1">I have read every section and we talked it through in person.</label>
+        <input type="checkbox" id="a2" /><label for="a2">We have both agreed the emergency signal and practised it once before starting.</label>
+        <input type="checkbox" id="a3" /><label for="a3">I am sober and signing of my own free will.</label>
+        <input type="checkbox" id="a4" /><label for="a4">Each of us keeps a signed copy.</label>
+      </div>
+      <div class="sigs" style="margin-top:14px">
+        <div>
+          <div class="field"><label>Submissive · signature</label></div>
+          <div class="sig-line"></div>
+          <div class="field"><label>Name &amp; date</label><input class="fill" /></div>
+        </div>
+        <div>
+          <div class="field"><label>Dominant · signature</label></div>
+          <div class="sig-line"></div>
+          <div class="field"><label>Name &amp; date</label><input class="fill" /></div>
+        </div>
+      </div>
+      <div class="no-print" style="text-align:center; margin-top:8px">
+        <button class="btn" type="button" onclick="window.print()">Print / save as PDF to sign</button>
+      </div>
+    </div>
+    <p class="note" style="margin-top:14px">This is a private agreement, not legal advice. In Singapore, consent cannot make lawful an act
+      intended or likely to cause grievous hurt or death (Penal Code s.87), so no document can waive liability for serious harm.
+      What this page does is record that we negotiated, what was agreed, and where it stopped.</p>
+  </section>
+</main>
+
+<script>
+  try {
+    document.getElementById('stamp').textContent =
+      new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  } catch (e) {}
+</script>
+</body>
+</html>
