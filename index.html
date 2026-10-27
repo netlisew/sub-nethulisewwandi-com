@@ -5,6 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex, nofollow" />
 <title>Submissive Profile — SC (Nethuli)</title>
+<meta name="description" content="A private submissive application by SC (Nethuli). The full profile is shared by personal invitation only, through a one-time link that opens on one device." />
+<link rel="canonical" href="https://sub.nethulisewwandi.com/" />
+<meta name="theme-color" content="#0e0b10" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#f8f4f6" media="(prefers-color-scheme: light)" />
+<link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="manifest" href="manifest.webmanifest" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="SC · Nethuli" />
+<meta property="og:title" content="Submissive Profile — SC (Nethuli)" />
+<meta property="og:description" content="A private submissive application by SC (Nethuli). The full profile is shared by personal invitation only, through a one-time link that opens on one device." />
+<meta property="og:url" content="https://sub.nethulisewwandi.com/" />
+<meta property="og:image" content="https://sub.nethulisewwandi.com/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="SC · Nethuli: a private submissive application, shared by invitation only." />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Submissive Profile — SC (Nethuli)" />
+<meta name="twitter:description" content="A private submissive application by SC (Nethuli). The full profile is shared by personal invitation only, through a one-time link that opens on one device." />
+<meta name="twitter:image" content="https://sub.nethulisewwandi.com/assets/og.png" />
+<meta name="twitter:image:alt" content="SC · Nethuli: a private submissive application, shared by invitation only." />
+<script>(function(){try{var t=localStorage.getItem("sub-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 
 <!-- Google Analytics (GA4). Loaded only off-localhost so local editing never
      pollutes the property. Tracking only — this private profile shows no public
@@ -70,7 +94,12 @@
     border-bottom: 1px solid var(--line);
     font-family: var(--font-ui);
   }
-  body:not(.activated) nav { display: none; }
+  /* before activation the app bar shows only the brand and the theme switch */
+  body:not(.activated) nav a { display: none; }
+  /* rule 30: the gate card sits in the centre of the screen below the app bar */
+  body:not(.activated) main { min-height: calc(100% - 58px); display: flex; flex-direction: column; padding-bottom: 24px; }
+  body:not(.activated) header.hero { margin-top: auto; padding-top: 24px; }
+  body:not(.activated) #gate { margin-bottom: auto; width: 100%; }
   nav .nav-inner {
     max-width: var(--maxw);
     margin: 0 auto;
@@ -221,9 +250,9 @@
     border: 1px solid var(--line);
     border-radius: 12px;
     padding: 16px 18px;
-    transition: border-color .15s, transform .15s;
+    transition: background-color .15s;
   }
-  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card:hover { background: var(--card-hover, #241c29); }
   .card .card-title {
     font-family: var(--font-ui);
     font-weight: 600;
@@ -485,6 +514,7 @@
     .gate-card { padding: 26px 20px; }
   }
 </style>
+<link rel="stylesheet" href="assets/site.css" />
 </head>
 <body>
 
@@ -506,8 +536,6 @@
     <h1 class="salutation">Dear <em>Mistress, Queen,<br />Goddess, Princess</em></h1>
     <div class="updated">A private submissive application</div>
   </header>
-
-  <hr class="rule" />
 
   <!-- ===================== ACCESS GATE ===================== -->
   <div id="gate">
@@ -625,7 +653,7 @@
   function reveal(html) {
     $('profile-content').innerHTML = html;
     document.body.classList.add('activated');
-    window.scrollTo({ top: 0 });
+    document.body.scrollTo({ top: 0 });
   }
 
   async function activate(token) {
@@ -674,5 +702,6 @@
   })();
 </script>
 
+<script src="assets/site.js"></script>
 </body>
 </html>

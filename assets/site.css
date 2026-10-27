@@ -1,0 +1,93 @@
+/* Shared polish for the profile, terms and consent pages (ui-ux-style).
+   Loaded after each page's own <style>, so it only adjusts layout and themes;
+   the dusty-rose palette, serif type and wording stay as they are. */
+
+/* ---------- Themes: dark is the original; light follows the system or the switch ---------- */
+:root { --nav-bg: rgba(14, 11, 16, 0.82); --glow: #1a1320; --hover: rgba(184, 134, 155, .10); --card-hover: #241c29; --zebra: rgba(255, 255, 255, .025); color-scheme: dark; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) {
+  --bg: #f8f4f6; --bg-soft: #f2ebef; --panel: #fffdfe; --panel-2: #f5edf1; --line: #e3d6dd;
+  --ink: #241c27; --ink-soft: #4b4050; --muted: #7a6e7e;
+  --accent: #a4708a; --accent-strong: #9a4d6d; --gold: #946d22; --star: #b0607f; --star-empty: #dccdd5;
+  --hard: #c0435a; --commit: #3f8a66;
+  --nav-bg: rgba(248, 244, 246, 0.84); --glow: #f3e6ed; --hover: rgba(154, 77, 109, .08); --card-hover: #f7eef3; --zebra: rgba(36, 28, 39, .025);
+  color-scheme: light;
+} }
+:root[data-theme="light"] {
+  --bg: #f8f4f6; --bg-soft: #f2ebef; --panel: #fffdfe; --panel-2: #f5edf1; --line: #e3d6dd;
+  --ink: #241c27; --ink-soft: #4b4050; --muted: #7a6e7e;
+  --accent: #a4708a; --accent-strong: #9a4d6d; --gold: #946d22; --star: #b0607f; --star-empty: #dccdd5;
+  --hard: #c0435a; --commit: #3f8a66;
+  --nav-bg: rgba(248, 244, 246, 0.84); --glow: #f3e6ed; --hover: rgba(154, 77, 109, .08); --card-hover: #f7eef3; --zebra: rgba(36, 28, 39, .025);
+  color-scheme: light;
+}
+
+/* ---------- No overscroll bounce: the page scrolls inside <body> ---------- */
+html { height: 100%; overflow: hidden; background: var(--bg); overscroll-behavior: none; scroll-behavior: auto; }
+body {
+  height: 100%; overflow-y: auto; overflow-x: hidden; overscroll-behavior: none; scroll-behavior: smooth;
+  background: radial-gradient(1200px 600px at 50% -10%, var(--glow) 0%, var(--bg) 55%) no-repeat;
+  background-color: var(--bg);
+}
+@media (prefers-reduced-motion: reduce) { body { scroll-behavior: auto; } }
+
+/* ---------- App bar: full width, no bottom rule, links as pills, theme switch at the right ---------- */
+nav { background: var(--nav-bg); border-bottom: 0; -webkit-backdrop-filter: blur(10px); }
+nav .nav-inner { max-width: none; padding: 10px 20px; }
+nav a { border-bottom: 0; border-radius: 999px; padding: 4px 10px; transition: color .15s, background-color .15s; }
+nav a:hover, nav a:focus-visible { background: var(--hover); color: var(--accent-strong); }
+nav a.brand:hover { background: none; }
+.nav-tools { display: inline-flex; align-items: center; gap: 10px; margin-left: 4px; }
+.theme-btn {
+  width: 34px; height: 34px; padding: 0; border-radius: 50%; cursor: pointer;
+  display: inline-grid; place-items: center; color: var(--ink-soft);
+  background: transparent; border: 1px solid var(--line); transition: background-color .15s, color .15s;
+}
+.theme-btn:hover { background: var(--hover); color: var(--accent-strong); }
+.theme-btn .i-sun { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .theme-btn .i-sun { display: block; } :root:not([data-theme="light"]) .theme-btn .i-moon { display: none; } }
+:root[data-theme="dark"] .theme-btn .i-sun { display: block; }
+:root[data-theme="dark"] .theme-btn .i-moon { display: none; }
+/* the one primary action (consent page: print to sign) sits in the app bar */
+nav .cta {
+  font-family: var(--font-ui); font-size: 13px; font-weight: 600; letter-spacing: .03em; line-height: 1;
+  color: #fff; background: var(--accent); border: 0; border-radius: 999px; padding: 10px 16px; cursor: pointer;
+  transition: background-color .15s, box-shadow .15s;
+}
+nav .cta:hover { background: var(--accent-strong); box-shadow: 0 0 0 4px rgba(184, 134, 155, .22); }
+
+/* ---------- No divider lines: spacing, surfaces and type separate things ---------- */
+.rule { display: none; }
+h2.section-title::after { content: none; }
+ul.clean li, ul.checklist li, .frow { border-bottom: 0; }
+ul.clean li + li, ul.checklist li + li { margin-top: 2px; }
+table.kinks tbody tr { border-top: 0; }
+table.kinks tbody tr:nth-child(even):not(.group) td { background: var(--zebra); }
+th, td { border-bottom: 0; }
+.frow:nth-child(even):not(.sum) { background: var(--zebra); }
+.stats, .open-grid { gap: 8px; background: transparent; border: 0; overflow: visible; }
+.stats .stat, .open-grid > div { border-radius: 12px; border: 1px solid var(--line); }
+footer { border-top: 0; }
+
+/* ---------- Cards: a slight colour change on hover, no lift, no outline ---------- */
+.card { transition: background-color .15s; }
+.card:hover { transform: none; border-color: var(--line); background: var(--card-hover); }
+
+/* ---------- Footer is one short line ---------- */
+footer { justify-content: center; gap: 10px; flex-wrap: nowrap; text-align: center; }
+footer > span + span::before { content: "·"; margin-right: 10px; }
+footer > span { white-space: nowrap; }
+@media (max-width: 540px) {
+  footer { flex-direction: column; align-items: center; gap: 2px; letter-spacing: .08em; }
+  footer > span + span::before { content: none; }
+}
+
+@media (max-width: 540px) {
+  nav .nav-inner { padding: 8px 14px; gap: 4px 6px; }
+  nav a { padding: 3px 8px; }
+}
+
+/* ---------- Print: the page flows over many sheets again ---------- */
+@media print {
+  html, body { height: auto; overflow: visible; background: #fff; }
+  .theme-btn, nav .cta { display: none !important; }
+}
